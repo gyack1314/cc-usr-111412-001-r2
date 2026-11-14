@@ -1,0 +1,69 @@
+{
+  "asof": 12,
+  "orders": [
+    {
+      "order_id": "o1",
+      "cohort": "2026-01",
+      "account": "A",
+      "paid_tokens": 100,
+      "gift_tokens": 20,
+      "price": "20.00",
+      "expires": 20
+    }
+  ],
+  "events": [
+    {
+      "id": "p1",
+      "revision": 1,
+      "kind": "purchase",
+      "order_id": "o1",
+      "occurred": 1,
+      "known": 1,
+      "tokens": 100,
+      "cash": "20.00"
+    },
+    {
+      "id": "g1",
+      "revision": 1,
+      "kind": "grant",
+      "order_id": "o1",
+      "occurred": 1,
+      "known": 1,
+      "tokens": 20
+    },
+    {
+      "id": "u1",
+      "revision": 1,
+      "kind": "use",
+      "order_id": "o1",
+      "occurred": 5,
+      "known": 6,
+      "tokens": 30,
+      "bucket": "paid"
+    }
+  ],
+  "calls": [
+    {
+      "id": "c1",
+      "revision": 1,
+      "known": 6,
+      "usage": "u1",
+      "model": "m1",
+      "input": 20,
+      "output": 10
+    }
+  ],
+  "rates": [
+    {
+      "model": "m1",
+      "start": 0,
+      "end": 20,
+      "known": 1,
+      "revision": 1,
+      "input_low": "0.01",
+      "input_high": "0.012",
+      "output_low": "0.02",
+      "output_high": "0.025"
+    }
+  ]
+}
