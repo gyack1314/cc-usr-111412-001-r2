@@ -8,7 +8,8 @@
       "paid_tokens": 100,
       "gift_tokens": 20,
       "price": "20.00",
-      "expires": 20
+      "expires": 20,
+      "coverage_end": 12
     }
   ],
   "events": [

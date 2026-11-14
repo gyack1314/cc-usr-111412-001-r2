@@ -1,4 +1,4 @@
-# 预付智能服务的未用额度与收入成本同群分析
+# 预付智能服务的履约成本预测与同群收入分析
 
 项目提供智能消费业务分析使用的来源准备接口。记录为合成资料，不对应真实平台客户。orders.py只重放已知权益事实，calls.py给已实现调用的成本输入。尚无收入确认政策、cohort单位经济或未来成本情景引擎。
 
@@ -21,3 +21,5 @@ docker run --rm --network=none intelligent-consumption python -m analytics
 ```
 
 运行创建的报告和临时文件使用`.runtime/`，不将本机账号配置写入项目。
+
+fulfillment.py的order_histories按订单与account保留连续覆盖范围、到期日、实际调用及付费/赠额来源，不包含未来购买或未来消耗预测。coverage_end定义已知连续日志覆盖终点，超过此点是未观察，不是0。供应商未来价格仅作为冻结情景，不将未来修订当成当时已知。

@@ -26,3 +26,10 @@ class DomainTests(unittest.TestCase):
         with self.assertRaises(ValueError):balances(d,12)
         d=read();d['events'].append(dict(d['events'][0],tokens=101))
         with self.assertRaises(ValueError):balances(d,12)
+
+from fulfillment import order_histories
+class FulfillmentTests(unittest.TestCase):
+    def test_order_coverage_and_known_cutoff(self):
+        d=read();self.assertEqual(order_histories(d,5)[0]['calls'],[])
+        r=order_histories(d,18)[0];self.assertEqual(r['observed_through'],12);self.assertEqual(len(r['calls']),1)
+        self.assertEqual(r['account'],'A');self.assertEqual(r['calls'][0]['bucket'],'paid')

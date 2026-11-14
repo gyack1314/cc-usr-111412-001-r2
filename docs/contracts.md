@@ -4,4 +4,4 @@ orders.py的balances(data,asof)读取orders与events，按已知时点筛选最�
 
 calls.py的cost_rows通过usage引用use事件，核对input+output与事件tokens，按调用发生时的有效期和asof前已知的价格revision匹配供应商成本；未匹配返回mapped=false，不当成零成本。固定价格可表示成low=high的区间。consumption与cash是业务允许的两种分析政策：前者按付费权益实际消耗确认，到期确认余额，后者按收款减退款；赠额没有收入。政策不代表财务合规意见。
 
-输入为UTF-8 JSON，金额为十进制字符串。样例是合成资料，不限定分析数据规模。
+fulfillment.py的order_histories按订单与account保留连续覆盖范围、到期日、实际调用及付费/赠额来源，不包含未来购买或未来消耗预测。coverage_end定义已知连续日志覆盖终点，超过此点是未观察，不是0。供应商未来价格仅作为冻结情景，不将未来修订当成当时已知。
